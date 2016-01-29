@@ -1,0 +1,49 @@
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Set;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+
+public class ChuckleClicker implements ActionListener {
+	public static void main(String[] args) {
+		ChuckleClicker buttons = new ChuckleClicker();
+		buttons.makesbuttons();
+	
+
+		
+		
+	}
+	
+
+	public void makesbuttons() {
+		JFrame rame = new JFrame();
+		rame.setVisible(true);
+	rame.setSize(500, 500);;
+		JPanel panel = new JPanel();
+		
+		JButton button = new JButton();
+		
+		button.setText("Joke");
+		panel.add(button);
+		rame.add(panel);
+		
+		JButton Button = new JButton();
+		Button.setText("punchline");
+		panel.add(Button);
+		rame.add(panel);
+Button.addActionListener(this);
+button.addActionListener(this);
+	}
+
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+
+}
