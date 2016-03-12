@@ -67,9 +67,15 @@ public class Jeopardy implements ActionListener {
 		secondButton = createButton("$100");
 		// 10. Add the secondButton to the quizPanel
 		quizPanel.add(secondButton);
+		thirdButton = createButton("$300");
+		quizPanel.add(thirdButton);
+		fourthButton = createButton("$400");
+		quizPanel.add(fourthButton);
 		// 11. Add action listeners to the buttons (2 lines of code)
 		firstButton.addActionListener(this);
 		secondButton.addActionListener(this);
+		thirdButton.addActionListener(this);
+		fourthButton.addActionListener(this);
 		// 12. Fill in the actionPerformed() method below
 
 		frame.pack();
@@ -101,7 +107,6 @@ public class Jeopardy implements ActionListener {
 
 	public void actionPerformed(ActionEvent arg0) {
 		// Remove this temporary message:
-		JOptionPane.showMessageDialog(null, "pressed " + ((JButton) arg0.getSource()).getText() + " button");
 
 		// Use the method that plays the jeopardy theme music.
 		playJeopardyTheme();
@@ -110,17 +115,24 @@ public class Jeopardy implements ActionListener {
 		if (buttonPressed.equals(firstButton)) {
 
 			// Call the askQuestion() method
-			askQuestion("Finish the sentence. I can't ____ __ ____ ____ _'_ ____ ___", "feel my face when I'm with you", 200);
+			askQuestion("Finish the sentence. I can't ____ __ ____ ____ _'_ ____ ___", "feel my face when I'm with you", 100);
 			// Fill in the askQuestion() method. When you play the game, the score should change.
 		}
 		// Or if the buttonPressed was the secondButton
 		if (buttonPressed.equals(secondButton)) {
-
+			askQuestion("Who was sorry written for?", "Selena Gomez", 200);
+		}
+		if (buttonPressed.equals(thirdButton)) {
+			askQuestion("What is Jay-z's real name?", "Shawn Corey Carter", 300);
+		}
+		if (buttonPressed.equals(fourthButton)) {
+			askQuestion("Sugar We’re Goin’ Down, Dance Dance, and A Little Less Sixteen Candles,A Little More Touch Me appear on what Fall Out Boy album?",
+					"From Under the Cork Tree", 400);
 		}
 		// Call the askQuestionRecipe with a harder question
 		// askQuestion();
 		// Clear the button text (set the button text to nothing)
-
+		buttonPressed.setText("");
 	}
 
 	private void askQuestion(String question, String correctAnswer, int prizeMoney) {
@@ -130,15 +142,15 @@ public class Jeopardy implements ActionListener {
 		// If the answer is correct
 		if (correctAnswer.equals(stuff)) {
 			JOptionPane.showMessageDialog(null, "correct");
-			
+
 			score += prizeMoney;
 			updateScore();
 		}
-		
+
 		// Otherwise
 		else {
-			score-=prizeMoney;
-			JOptionPane.showMessageDialog(null, "Incorrect. it is, feel my face when I'm with you");
+			score -= prizeMoney;
+			JOptionPane.showMessageDialog(null, "Incorrect " + correctAnswer);
 			updateScore();
 		}
 		// Decrement the score by the prizeMoney
