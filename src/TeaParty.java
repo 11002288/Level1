@@ -26,12 +26,12 @@
 		if (isWoman) {
 			
 		
-		return"Hello Ms." + lastName;
+		return"Hello Ms. " + lastName;
 		}
 		if (isKnighted) {
 			
 		
-		return"Hello sir " + lastName;
+		return"Hello Sir " + lastName;
 		}
 		
 			return"Hello Mr. " + lastName;
