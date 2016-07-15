@@ -1,18 +1,26 @@
 import java.applet.AudioClip;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JApplet;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class tootmachine {
+public class tootmachine implements ActionListener{
 public static void main(String[] args) {
-	JFrame t = new JFrame();
+	tootmachine shard = new tootmachine();
+	shard.farts();
+}
+
+JFrame t = new JFrame();
+JPanel o = new JPanel();
+JButton oo = new JButton();
+JButton ob = new JButton();
+JButton bo = new JButton();
+
+private  void farts() {
 	t.setVisible(true);
-	JPanel o = new JPanel();
-   JButton oo = new JButton();
-   JButton ob = new JButton();
-   JButton bo = new JButton();
    t.add(o);
    o.add(oo);
    o.add(bo);
@@ -21,6 +29,10 @@ public static void main(String[] args) {
    ob.setText("Fart 2");
    bo.setText("Worst fart ever");
    t.pack();
+oo.addActionListener(this);
+ob.addActionListener(this);
+bo.addActionListener(this);
+
 }
 //    Create a GUI for a fart machine that will play different fart sounds when the buttons are pressed.
 //
@@ -30,6 +42,20 @@ public static void main(String[] args) {
 private void playSound(String fileName) {
 		AudioClip sound = JApplet.newAudioClip(getClass().getResource(fileName));
 		sound.play();
+	}
+@Override
+public void actionPerformed(ActionEvent e) {
+	// TODO Auto-generated method stub
+	if (e.getSource() == oo) {
+	playSound("fartsboy.wav");	
+	}
+	if (e.getSource() == ob) {
+		playSound("Person Farting-SoundBible.com-1490324066.wav");
+	}
+if(e.getSource() == bo){
+	playSound("Fart Reverberating Bathroom-SoundBible.com-2032114496.wav");
+	
+}
 	}
 
 
