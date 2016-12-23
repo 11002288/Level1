@@ -5,6 +5,7 @@
 /Backpack.class
 /Bronx Cheer-SoundBible.com-524243477.wav
 /Burrito.class
+/Calculator.class
 /CowTimer.class
 /Drivers.class
 /DrumKit.class
@@ -12,6 +13,7 @@
 /EatMe.class
 /Fall Out Boy - Immortals (From Big Hero 6).mp3
 /Fart Reverberating Bathroom-SoundBible.com-2032114496.wav
+/Houses.class
 /Oopsy Daisy Fart-SoundBible.com-8405343.mp3
 /Pencil.class
 /Person Farting-SoundBible.com-1490324066.wav
@@ -28,7 +30,6 @@
 /rabbit.png
 /steak.jpg
 /sushi.jpg
-/Houses.class
 /Human.class
 /Jeopardy.class
 /Jukebox.class
@@ -40,6 +41,8 @@
 /Movie.class
 /Nastysuprise.class
 /PhotoQuiz.class
+/PigLatin.class
+/PigLatinConverter.class
 /Platypi.class
 /Platypus.class
 /Pokemon.class
@@ -73,10 +76,7 @@
 /spongebob.class
 /stuff.class
 /tootmachine.class
+/w.class
 /water.class
 /whackamole.class
-/PigLatin.class
-/PigLatinConverter.class
-/PigLatinConverter$PigLatinTranslator.class
-/Calculator.class
-/w.class
+/whack.class
