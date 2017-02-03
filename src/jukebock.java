@@ -1,4 +1,6 @@
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
@@ -17,7 +19,7 @@ import javazoom.jl.player.advanced.AdvancedPlayer;
 /* 1. Download the JavaZoom jar from here: http://bit.ly/javazoom
  * 2. Right click your project and add it as an External JAR (Under Java Build Path > Libraries).*/
 
-public class jukebock implements Runnable {
+public class jukebock implements Runnable, ActionListener {
 
 	public static void main(String[] args) {
 		SwingUtilities.invokeLater(new jukebock());
@@ -41,11 +43,16 @@ public class jukebock implements Runnable {
 		JPanel jp = new JPanel();
 		JButton jb = new JButton();
 		JButton jl = new JButton();
+		JButton j = new JButton();
 		jf.setVisible(true);
 		jf.add(jp);
 		jp.add(jb);
 		jp.add(jl);
+		jp.add(j);
 		jf.pack();
+		jb.setText("My House");
+		jb.addActionListener(this);
+		jl.setText("We are Number 1");
 	}
 
 	/* Use this method to add album covers to your Panel. */
@@ -53,6 +60,12 @@ public class jukebock implements Runnable {
 		URL imageURL = getClass().getResource(fileName);
 		Icon icon = new ImageIcon(imageURL);
 		return new JLabel(icon);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+
 	}
 
 }
